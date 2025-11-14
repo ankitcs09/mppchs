@@ -1,0 +1,81 @@
+<?php
+
+namespace App\Models;
+
+use CodeIgniter\Model;
+
+class BeneficiaryV2Model extends Model
+{
+    protected $table      = 'beneficiaries_v2';
+    protected $primaryKey = 'id';
+    protected $returnType = 'array';
+
+    protected $allowedFields = [
+        'legacy_beneficiary_id',
+        'reference_number',
+        'legacy_reference',
+        'plan_option_id',
+        'category_id',
+        'first_name',
+        'middle_name',
+        'last_name',
+        'gender',
+        'date_of_birth',
+        'retirement_or_death_date',
+        'deceased_employee_name',
+        'rao_id',
+        'rao_other',
+        'retirement_office_id',
+        'retirement_office_other',
+        'designation_id',
+        'designation_other',
+        'correspondence_address',
+        'city',
+        'state_id',
+        'postal_code',
+        'ppo_number_enc',
+        'ppo_number_masked',
+        'pran_number_enc',
+        'pran_number_masked',
+        'gpf_number_enc',
+        'gpf_number_masked',
+        'bank_source_id',
+        'bank_source_other',
+        'bank_servicing_id',
+        'bank_servicing_other',
+        'bank_account_enc',
+        'bank_account_masked',
+        'aadhaar_enc',
+        'aadhaar_masked',
+        'pan_enc',
+        'pan_masked',
+        'primary_mobile_enc',
+        'primary_mobile_masked',
+        'primary_mobile_hash',
+        'alternate_mobile_enc',
+        'alternate_mobile_masked',
+        'email',
+        'blood_group_id',
+        'samagra_enc',
+        'samagra_masked',
+        'terms_accepted_at',
+        'otp_verified_at',
+        'otp_reference',
+        'submission_source',
+        'version',
+        'pending_review',
+        'last_change_request_id',
+        'pending_change_request',
+        'change_requests_submitted',
+        'change_requests_approved',
+        'last_request_submitted_at',
+        'last_request_status',
+        'last_request_reviewed_at',
+        'last_request_reviewer_id',
+        'last_request_comment',
+        'created_by',
+        'created_at',
+        'updated_by',
+        'updated_at',
+    ];
+}

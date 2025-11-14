@@ -1,0 +1,47 @@
+.idle-timeout-modal {
+    position: fixed;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1080;
+    pointer-events: none;
+
+    &[hidden] {
+        display: none;
+    }
+
+    &.is-visible {
+        pointer-events: auto;
+    }
+}
+
+.idle-timeout-modal__backdrop {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.idle-timeout-modal__dialog {
+    position: relative;
+    background: var(--panel-surface, #fff);
+    color: var(--text-primary, #1f2942);
+    border-radius: 1rem;
+    box-shadow: 0 20px 60px rgba(15, 23, 42, 0.35);
+    padding: 2rem;
+    margin: 1rem;
+    max-width: 420px;
+    width: 100%;
+    z-index: 1;
+}
+
+.idle-timeout-modal__title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+.idle-timeout-modal__text {
+    margin-bottom: 1.5rem;
+    color: var(--text-secondary, #5a6470);
+}

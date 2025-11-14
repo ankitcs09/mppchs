@@ -1,0 +1,179 @@
+.app-shell {
+    min-height: 100vh;
+    padding-top: 1.5rem;
+    padding-bottom: 2rem;
+    position: relative;
+}
+
+.app-navbar {
+    background: var(--nav-bg, rgba(255, 255, 255, 0.92));
+    border-bottom: 1px solid var(--nav-border, rgba(215, 222, 235, 0.7));
+    backdrop-filter: blur(18px);
+    transition: background-color var(--transition-base), border-color var(--transition-base), color var(--transition-base);
+    z-index: 1030;
+}
+
+.app-navbar .navbar-brand {
+    font-family: var(--font-heading, "Poppins", sans-serif);
+    font-weight: 600;
+    color: var(--text-primary, #2c2c2c);
+    letter-spacing: 0.01em;
+}
+
+.app-navbar .navbar-nav .nav-link {
+    color: var(--text-secondary, #5a6470);
+    font-weight: 500;
+    transition: color var(--transition-base);
+}
+
+.app-navbar .navbar-nav .nav-link:hover,
+.app-navbar .navbar-nav .nav-link:focus {
+    color: var(--text-primary, #2c2c2c);
+}
+
+.theme-dark .app-navbar .navbar-nav .nav-link {
+    color: var(--text-secondary, #c0ccd8);
+}
+
+.app-sidebar {
+    background: var(--sidebar-bg, #eef3fb);
+    border-right: 1px solid var(--sidebar-border, #dde5f2);
+    min-height: calc(100vh - 4.5rem);
+    padding: 1.75rem 1.25rem;
+    position: sticky;
+    top: 4.5rem;
+    transition: transform var(--transition-base), box-shadow var(--transition-base), background-color var(--transition-base), border-color var(--transition-base);
+}
+
+.app-sidebar .nav-link {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    font-weight: 600;
+    color: var(--sidebar-link, #2f405c);
+    padding: 0.65rem 0.9rem;
+    border-radius: var(--border-radius-base, 10px);
+    transition: background-color var(--transition-base), box-shadow var(--transition-base), color var(--transition-base);
+}
+
+.app-sidebar .nav-link .bi {
+    width: 1.1rem;
+    height: 1.1rem;
+    flex-shrink: 0;
+}
+
+.app-sidebar .nav-link:hover,
+.app-sidebar .nav-link:focus,
+.app-sidebar .nav-link.active {
+    background: var(--sidebar-active-bg, rgba(216, 230, 255, 0.8));
+    color: var(--sidebar-active-color, #1d3354);
+    box-shadow: var(--shadow-small, 0 12px 28px rgba(16, 42, 84, 0.1));
+}
+
+.app-main {
+    padding-top: 1.5rem;
+    padding-bottom: 2.5rem;
+}
+
+.app-sidebar-backdrop {
+    display: none;
+}
+
+body.sidebar-open {
+    overflow: hidden;
+}
+
+.app-main-surface {
+    background: var(--panel-surface, #ffffff);
+    border-radius: clamp(18px, 2vw, 24px);
+    border: 1px solid var(--card-border, #e6e9ef);
+    box-shadow: var(--card-shadow, var(--shadow-small, 0 12px 28px rgba(16, 42, 84, 0.1)));
+    padding: clamp(1.25rem, 2vw + 1rem, 2.5rem);
+    min-height: calc(100vh - 6.5rem);
+    transition: background-color var(--transition-base), border-color var(--transition-base), box-shadow var(--transition-base);
+}
+
+.page-heading {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.page-heading__title {
+    font-family: var(--font-heading, "Poppins", sans-serif);
+    font-weight: 600;
+    margin: 0;
+    color: var(--text-primary, #2c2c2c);
+}
+
+.page-heading__subtitle {
+    margin: 0;
+    color: var(--text-secondary, #5a6470);
+}
+
+@media (max-width: 991.98px) {
+    .app-sidebar {
+        position: fixed;
+        top: 4.25rem;
+        bottom: 0;
+        left: 0;
+        width: min(280px, 85vw);
+        max-width: 100%;
+        min-height: 0;
+        transform: translateX(-105%);
+        border-right: 0;
+        border-bottom: 0;
+        padding: 1.5rem 1.25rem;
+        box-shadow: var(--shadow-small, 0 12px 28px rgba(16, 42, 84, 0.12));
+        z-index: 1040;
+        overflow-y: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .app-sidebar.is-open {
+        transform: translateX(0);
+    }
+
+    .app-sidebar-backdrop {
+        position: fixed;
+        inset: 0;
+        background: rgba(18, 27, 39, 0.45);
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity var(--transition-base), visibility var(--transition-base);
+        z-index: 1035;
+        display: block;
+    }
+
+    .app-sidebar-backdrop.is-active {
+        opacity: 1;
+        visibility: visible;
+    }
+
+    .app-shell {
+        padding-top: 1rem;
+    }
+}
+
+@media (max-width: 575.98px) {
+    .app-navbar .navbar-brand {
+        font-size: 0.95rem;
+    }
+
+    .app-main-surface {
+        padding: 1.25rem;
+        border-radius: 18px;
+    }
+}
+
+.app-shell a:focus-visible,
+.app-shell button:focus-visible,
+.app-shell input:focus-visible,
+.app-shell select:focus-visible,
+.app-shell textarea:focus-visible {
+    outline: none;
+    box-shadow: var(--focus-ring, 0 0 0 3px rgba(0, 120, 215, 0.25));
+}

@@ -1,0 +1,56 @@
+﻿[data-theme="freshcare-modern"] {
+    --primary: #2f8c8c;
+    --accent: #8dd3bb;
+    --warning: #f9c74f;
+    --danger: #eb5757;
+
+    --body-gradient-start: #e7f8f4;
+    --body-gradient-end: #d6f1eb;
+    --panel-surface: #ffffff;
+    --card-background: #f2fbf9;
+    --card-border: #c6e9dd;
+    --card-shadow: 0 20px 45px rgba(55, 140, 132, 0.08);
+
+    --border-color: #cfe7e2;
+    --sidebar-bg: #e5f6f0;
+    --sidebar-border: #bee7da;
+    --sidebar-link: #215b5b;
+    --sidebar-link-muted: #4c7570;
+    --sidebar-active-bg: #c6ebe1;
+    --sidebar-active-color: #194646;
+
+    --nav-bg: rgba(255, 255, 255, 0.9);
+    --nav-border: rgba(190, 231, 218, 0.8);
+
+    --text-primary: #173c3c;
+    --text-secondary: #51736f;
+    --link-color: #2f7e7e;
+
+    --shadow-small: 0 8px 24px rgba(47, 140, 140, 0.1);
+}
+
+[data-theme="freshcare-modern"].theme-dark {
+    --body-gradient-start: #123030;
+    --body-gradient-end: #0d2222;
+    --panel-surface: #1a2e2e;
+    --card-background: #1a2e2e;
+    --card-border: #204040;
+    --card-shadow: 0 16px 40px rgba(6, 25, 25, 0.45);
+
+    --border-color: #264646;
+    --sidebar-bg: #142626;
+    --sidebar-border: #1b3434;
+    --sidebar-link: #d7f0ec;
+    --sidebar-link-muted: #9ec3bc;
+    --sidebar-active-bg: #204040;
+    --sidebar-active-color: #ffffff;
+
+    --nav-bg: rgba(17, 36, 36, 0.92);
+    --nav-border: rgba(32, 64, 64, 0.85);
+
+    --text-primary: #e9fbf7;
+    --text-secondary: #b5d7d1;
+    --link-color: #6fd0d0;
+
+    --shadow-small: 0 12px 30px rgba(4, 18, 18, 0.5);
+}

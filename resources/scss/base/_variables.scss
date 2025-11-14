@@ -1,0 +1,32 @@
+:root {
+  --font-heading: 'Noto Sans Devanagari', 'Poppins', sans-serif;
+  --font-body: 'Noto Sans Devanagari', 'Open Sans', sans-serif;
+  --font-numeric: 'Roboto Mono', monospace;
+  --border-radius-base: 10px;
+  --border-radius-lg: 18px;
+  --transition-base: 0.2s ease-in-out;
+  --transition-slow: 0.35s ease-in-out;
+
+  --background: #f4f6fb;
+  --panel-surface: #ffffff;
+  --card-background: #f8fbff;
+  --card-border: #e6e9ef;
+  --card-shadow: 0 18px 36px rgba(28, 59, 94, 0.08);
+
+  --text-primary: #2c2c2c;
+  --text-secondary: #5a6470;
+  --link-color: #0078d7;
+
+  --nav-bg: rgba(255, 255, 255, 0.92);
+  --nav-border: rgba(215, 222, 235, 0.7);
+
+  --sidebar-bg: #eef3fb;
+  --sidebar-border: #dde5f2;
+  --sidebar-link: #2f405c;
+  --sidebar-link-muted: #5a6a85;
+  --sidebar-active-bg: #d8e6ff;
+  --sidebar-active-color: #1d3354;
+
+  --shadow-small: 0 12px 28px rgba(16, 42, 84, 0.1);
+  --focus-ring: 0 0 0 3px rgba(0, 120, 215, 0.25);
+}

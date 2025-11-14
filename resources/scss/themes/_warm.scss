@@ -1,0 +1,56 @@
+﻿[data-theme="wellcare-warm"] {
+    --primary: #d8891f;
+    --accent: #5cb85c;
+    --warning: #f9c74f;
+    --danger: #e76f51;
+
+    --body-gradient-start: #fff7e8;
+    --body-gradient-end: #ffeccf;
+    --panel-surface: #ffffff;
+    --card-background: #fff8ec;
+    --card-border: #ffe4c2;
+    --card-shadow: 0 20px 45px rgba(232, 148, 48, 0.08);
+
+    --border-color: #ffe1b3;
+    --sidebar-bg: #fff3df;
+    --sidebar-border: #ffd9ab;
+    --sidebar-link: #7a4b00;
+    --sidebar-link-muted: #a07535;
+    --sidebar-active-bg: #ffe4ba;
+    --sidebar-active-color: #5c3600;
+
+    --nav-bg: rgba(255, 245, 228, 0.92);
+    --nav-border: rgba(255, 220, 170, 0.8);
+
+    --text-primary: #3d2c10;
+    --text-secondary: #6c5c40;
+    --link-color: #c67100;
+
+    --shadow-small: 0 8px 24px rgba(215, 137, 31, 0.12);
+}
+
+[data-theme="wellcare-warm"].theme-dark {
+    --body-gradient-start: #271c10;
+    --body-gradient-end: #1c140b;
+    --panel-surface: #302316;
+    --card-background: #302316;
+    --card-border: #3f2d1d;
+    --card-shadow: 0 16px 40px rgba(21, 11, 3, 0.5);
+
+    --border-color: #46331f;
+    --sidebar-bg: #261b0f;
+    --sidebar-border: #312314;
+    --sidebar-link: #ffe7c5;
+    --sidebar-link-muted: #d8b48a;
+    --sidebar-active-bg: #3a2717;
+    --sidebar-active-color: #ffffff;
+
+    --nav-bg: rgba(33, 24, 15, 0.95);
+    --nav-border: rgba(58, 40, 24, 0.85);
+
+    --text-primary: #fff3dc;
+    --text-secondary: #e1c7a2;
+    --link-color: #ffb34f;
+
+    --shadow-small: 0 12px 30px rgba(23, 10, 2, 0.55);
+}

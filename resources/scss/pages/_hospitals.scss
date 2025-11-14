@@ -1,0 +1,167 @@
+.hospitals-panel {
+  .app-panel__meta {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+  }
+
+  .metric-chip {
+    display: inline-flex;
+    flex-direction: column;
+    padding: 0.35rem 0.85rem;
+    border-radius: 0.75rem;
+    background: rgba(25, 103, 210, 0.1);
+    border: 1px solid rgba(25, 103, 210, 0.2);
+
+    &__label {
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: #5f6368;
+    }
+
+    &__value {
+      font-weight: 600;
+      color: #1967d2;
+    }
+  }
+
+  .hospital-search {
+    .btn {
+      border-top-left-radius: 0;
+      border-bottom-left-radius: 0;
+    }
+  }
+
+  .hospital-filter-pills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  .filter-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    padding: 0.4rem 0.65rem;
+    border-radius: 999px;
+    background: #eef2ff;
+    color: #1f3070;
+    font-size: 0.85rem;
+
+    &__label {
+      font-weight: 600;
+    }
+
+    &__value {
+      max-width: 12rem;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    &__close {
+      border: 0;
+      background: transparent;
+      color: inherit;
+      display: inline-flex;
+      align-items: center;
+      padding: 0;
+      font-size: 0.85em;
+    }
+  }
+
+  .hospital-legend {
+    border: 1px solid rgba(32, 33, 36, 0.12);
+
+    .legend-icon {
+      width: 48px;
+      height: 48px;
+      display: grid;
+      place-items: center;
+      background: rgba(13, 110, 253, 0.1);
+      color: #0d6efd;
+      font-size: 1.5rem;
+    }
+  }
+
+  .table-toolbar {
+    border: 1px solid rgba(32, 33, 36, 0.08);
+    border-radius: 0.75rem;
+    padding: 0.75rem 1rem;
+    background: #fff;
+
+    &__controls .form-select {
+      min-width: 5rem;
+    }
+  }
+
+  .empty-state {
+    border: 1px dashed rgba(32, 33, 36, 0.25);
+    border-radius: 1rem;
+    background: rgba(248, 249, 250, 0.8);
+
+    &__icon {
+      width: 64px;
+      height: 64px;
+      display: grid;
+      place-items: center;
+      background: rgba(13, 110, 253, 0.12);
+      color: #0d6efd;
+      font-size: 1.5rem;
+    }
+  }
+
+  @media (max-width: 767.98px) {
+    .table-toolbar {
+      text-align: center;
+    }
+  }
+
+  .table-responsive {
+    position: relative;
+  }
+
+  .table-loading {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 0.75rem;
+    z-index: 5;
+  }
+
+  .dataTables_wrapper {
+    .datatable-footer {
+      width: 100%;
+
+      .dataTables_info {
+        font-size: 0.85rem;
+        color: #5f6368;
+      }
+
+      .dataTables_paginate {
+        display: flex;
+        gap: 0.25rem;
+
+        .paginate_button {
+          border-radius: 0.5rem;
+          padding: 0.25rem 0.65rem;
+          border: 1px solid transparent;
+          color: #1f3070 !important;
+
+          &.current,
+          &:hover {
+            border-color: rgba(31, 48, 112, 0.15);
+            background: rgba(31, 48, 112, 0.08);
+          }
+        }
+      }
+    }
+  }
+}
