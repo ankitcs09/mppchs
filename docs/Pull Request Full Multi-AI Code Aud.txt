@@ -1,0 +1,251 @@
+Pull Request: Full Multi-AI Code Audit Request
+Branch: audit-review → main
+
+This Pull Request is intentionally created to trigger a complete, multi-engine automated audit of the entire MPPGCL Cashless Portal CodeIgniter 4 codebase.
+
+The goal is to detect issues across:
+
+Architecture
+
+Security
+
+Database schema
+
+Performance
+
+Maintainability
+
+Best practices
+
+Anti-patterns
+
+Code smells
+
+Duplicate logic
+
+Naming and structural inconsistencies
+
+Audit Objectives
+
+Deep Security Audit
+
+SQL injection risks
+
+XSS, CSRF, authentication flaws
+
+Session weaknesses
+
+Input validation gaps
+
+Sensitive data leakage
+
+Broken access controls
+
+OTP flow security
+
+Weak file upload handling
+
+Architecture Review
+
+Oversized services
+
+Circular dependencies
+
+Missing interfaces
+
+Bad separation of concerns
+
+Controller bloat
+
+Model misuse
+
+Poor naming conventions
+
+Repeated logic across services
+
+Performance Diagnostics
+
+N+1 queries
+
+Missing indexes
+
+Heavy synchronous loops
+
+Inefficient DB interactions
+
+Poor caching strategy
+
+Expensive operations inside controllers/services
+
+Maintainability & Code Quality
+
+Dead code
+
+Duplicated functions
+
+Hardcoded values
+
+Unreachable code
+
+Error handling gaps
+
+Untyped arrays
+
+Missing DTOs
+
+Missing interfaces/abstractions
+
+Standards Compliance
+
+PSR-12
+
+CI4 Code Style
+
+Folder structure alignment
+
+Naming consistency
+
+Security + Performance of Exporters
+
+PDF injection safety
+
+Excel formula injection
+
+Binary data sanitization
+
+Tools Expected to Run
+
+1.CodeRabbit AI
+
+Suggested review instructions:
+
+"Review complete project structure and give architecture-level issues"
+
+"Detect deep security flaws"
+
+"Suggest CodeIgniter 4 best-practice improvements"
+
+ 2.SonarCloud
+
+Request:
+
+Code smells
+
+Duplications
+
+Maintainability rating
+
+Security hotspots
+
+Cognitive complexity detection
+
+3 Snyk Code
+
+Request:
+
+SQL injection
+
+Command injection
+
+Path traversal
+
+Deserialization flaws
+
+Sensitive data handling risks
+
+4 DeepSource
+
+Request:
+
+Anti-patterns
+
+Complex function refactor suggestions
+
+Type issues
+
+Inefficient code blocks
+
+Bad database patterns
+
+5 Codacy
+
+Request:
+
+Static analysis
+
+Lint-level warnings
+
+Best practices alignment
+
+6 GitHub Actions (PHPStan + PHPMD)
+
+Request:
+
+Run PHPStan at level 8
+
+Run PHPMD for:
+
+cleancode
+
+codesize
+
+controversial
+
+design
+
+7 Scope of Audit
+
+Include all directories:
+
+app/
+public/
+resources/
+tests/
+writable/
+builds/
+
+
+Especially:
+
+app/Services/
+app/Controllers/
+app/Models/
+app/Libraries/
+app/Helpers/
+app/Filters/
+
+
+Special attention areas:
+
+Beneficiary onboarding
+
+Aadhaar / employee ID flows
+
+OTP + login system
+
+Hospital directory logic
+
+Dependent data
+
+Exporters (Excel, PDF)
+
+Images / file upload
+
+Session management
+
+API endpoints
+ 
+8.Expected Output
+
+All tools are expected to produce:
+
+Summary Report
+Security Findings
+Architecture Flaws
+Performance bottlenecks
+Code smells
+Vulnerability Severity (Critical/High/Med/Low)
+Recommended Fixes
+Refactoring Suggestions
+Maintainability Grade (A/B/C/D/E)
+Duplicated Code Blocks
