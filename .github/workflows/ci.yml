@@ -27,7 +27,7 @@ jobs:
 
       - name: PHPStan
         run: |
-          vendor/bin/phpstan analyse --memory-limit=512M
+          vendor/bin/phpstan analyse app --memory-limit=512M
 
       - name: PHPMD
         run: |
