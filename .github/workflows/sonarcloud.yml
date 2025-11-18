@@ -9,6 +9,9 @@ on:
 jobs:
   sonarcloud:
     runs-on: ubuntu-latest
+    env:
+      SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+      SONAR_HOST_URL: https://sonarcloud.io
 
     steps:
       - name: Checkout repository
@@ -31,3 +34,4 @@ jobs:
           args: >
             -Dsonar.projectKey=ankitcs09_cashless-project
             -Dsonar.organization=ankitcs09
+            -Dsonar.sources=app,public
