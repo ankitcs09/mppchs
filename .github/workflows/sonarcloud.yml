@@ -1,0 +1,33 @@
+name: SonarCloud
+
+on:
+  push:
+    branches: [ main, master, audit-review ]
+  pull_request:
+    branches: [ main, master ]
+
+jobs:
+  sonarcloud:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.2'
+          coverage: none
+          extensions: mbstring, intl, json, curl
+
+      - name: Install Composer dependencies
+        run: composer install --no-progress --prefer-dist
+
+      - name: SonarCloud Scan
+        uses: SonarSource/sonarcloud-github-action@v2
+        with:
+          projectBaseDir: .
+          args: >
+            -Dsonar.projectKey=ankitcs09_cashless-project
+            -Dsonar.organization=ankitcs09
