@@ -29,10 +29,6 @@ jobs:
       - name: SonarCloud Scan
         uses: SonarSource/sonarcloud-github-action@v2
         env:
-          SONAR_TOKEN: 
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
           SONAR_PROJECT_KEY: ankitcs09_cashless-project
           SONAR_ORGANIZATION: ankitcs09
-        with:
-          args: >
-            -Dsonar.php.tests.reportPath=build/phpunit.xml
-            -Dsonar.php.coverage.reportPaths=build/coverage.xml
