@@ -1,0 +1,70 @@
+﻿.claims-tabs {
+    .nav-link {
+        border-radius: 999px;
+        color: var(--primary, #2a7fa5);
+        padding: 0.35rem 0.9rem;
+        font-weight: 500;
+        transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+    }
+
+    .nav-link:hover,
+    .nav-link:focus {
+        color: color-mix(in srgb, var(--primary, #2a7fa5) 85%, #000 15%);
+        background-color: color-mix(in srgb, var(--primary, #2a7fa5) 12%, transparent);
+    }
+
+    .nav-link.active {
+        background-color: var(--primary, #2a7fa5);
+        color: #fff;
+        box-shadow: var(--shadow-small, 0 8px 20px rgba(16, 42, 84, 0.12));
+    }
+}
+
+.claims-table {
+    border-radius: 1rem;
+}
+
+.claims-table .table {
+    border-collapse: separate;
+    border-spacing: 0;
+    margin-bottom: 0;
+}
+
+.claims-table thead th {
+    font-size: 0.72rem;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: var(--text-secondary, #5a6470);
+    border-bottom-width: 1px;
+}
+
+.claims-table tbody td {
+    padding-top: 0.55rem;
+    padding-bottom: 0.55rem;
+    vertical-align: middle;
+    border-color: color-mix(in srgb, var(--border-color, #d9e4ff) 60%, transparent);
+}
+
+.claims-table tbody tr:first-child td {
+    border-top: none;
+}
+
+.claims-table__subtext {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.25rem;
+    font-size: 0.75rem;
+    color: var(--text-secondary, #5a6470);
+}
+
+.claims-table__tag {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.1rem 0.6rem;
+    border-radius: 999px;
+    font-size: 0.65rem;
+    font-weight: 500;
+    background-color: color-mix(in srgb, var(--primary, #2a7fa5) 12%, transparent);
+    color: var(--primary, #2a7fa5);
+    border: 1px solid color-mix(in srgb, var(--primary, #2a7fa5) 25%, transparent);
+}

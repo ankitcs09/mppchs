@@ -1,0 +1,26 @@
+/**
+ * Main SCSS entry point for the WellCare/FreshCare portal.
+ * ------------------------------------------------------------------
+ * Use this file to compose partials for tokens, bootstrap overrides,
+ * component styling, and theme-specific variables. The compiled output
+ * should target public/assets/css/app.css.
+ */
+
+@use "base/variables";
+@use "base/typography";
+@use "components/cards";
+@use "components/buttons";
+@use "components/theme-switcher";
+@use "components/forms";
+@use "components/tables";
+@use "components/idle-timeout";
+@use "themes/classic";
+@use "themes/warm";
+@use "themes/freshcare";
+@use "layouts/shell";
+@use "pages/auth";
+@use "pages/dashboard";
+@use "pages/claims";
+@use "pages/admin-users";
+@use "pages/change-requests";
+@use "pages/hospitals";

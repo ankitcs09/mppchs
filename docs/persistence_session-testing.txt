@@ -1,0 +1,46 @@
+Open a private window, go to /login, enter valid credentials, tick “Remember me on this device”.
+
+After redirect (e.g., /dashboard), close the entire browser.
+Reopen the same browser, hit /dashboard directly; you should land in the dashboard without the login form and a fresh session should be visible in ci_sessions.
+Inspect browser cookies: mppgcl_remember should exist, HTTP-only, Lax, ~30-day expiry.
+3. No checkbox
+
+Log out, sign in again without checking “Remember me”.
+Refresh /dashboard after closing/reopening the browser: you should be forced to log in again.
+Confirm there is no mppgcl_remember cookie and auth_remember_tokens has no row for that user/device.
+
+4. Logout / password change revocation
+
+Sign in with remember-me checked, confirm the cookie/table row exists.
+Click “Logout”: the cookie should disappear (DevTools Application tab) and the corresponding DB row should be deleted.
+Repeat with a remember-me login, then navigate to “Change Password”, update the password; after the success notice, check the tokens table to ensure all rows for that user are gone and the cookie is cleared.
+
+5. Cross-browser safety
+
+Log in with remember-me in Browser A.
+In Browser B (different UA), open the site: you should not get auto-login; without credentials B should go to /login.
+If you repeat the remember-me login in Browser B, both browsers should work until you exceed the configured device limit (default 5). To check the cap, keep adding new browsers/devices and watch auth_remember_tokens: once you exceed 5, the oldest entries are pruned.
+
+6. Device theft / token tamper handling
+
+In DB, copy a token row’s selector and change the cookie’s validator in DevTools; reload. You should be redirected to /login, the tampered row deleted, and no new session created.
+Likewise, edit the cookie to an invalid base64 string; the filter should ignore it and leave you logged out.
+
+7. Session handoff flow
+
+While logged in with remember-me in Browser A, try logging in elsewhere to trigger session handoff. Accept the handoff; confirm that once Browser B finishes, Browser A is logged out and its cookie/token is revoked (so refreshing A prompts for login).
+
+8. Logs / analytics
+
+Tail writable/logs/log-*.php: successful auto-logins show [RememberMe] Auto-login succeeded entries; invalid/tampered attempts log warnings/errors.
+If you need to debug cookie lifetimes, query 
+
+
+
+Open DevTools → Application → Cookies → http://localhost and confirm you now see mppgcl_remember with a ~30‑day expiry (matches the log).
+
+Close all browser windows, reopen, and browse directly to /dashboard; it should auto‑sign you in on that device only.
+
+Try logging out and ensure the cookie disappears (logout calls forgetCurrentDevice()).
+
+Optional: repeat on another browser to confirm the cookie is scoped per device.

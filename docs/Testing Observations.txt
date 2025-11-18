@@ -1,0 +1,13 @@
+Testing Observations
+
+1. Edit forms - Na
+2. Family Pensioner me erorr show karta hai
+3. Add Dependent me samasya hai - in addhar filling, proper validation is not done. Execpetion is being thrown by the system,
+4. Declaration check to highlight complete box.
+5. Spouse - agar ek jod diya. Father, Mother , Spouse , Father In Law, Mother in Law Duabara add nahi ho sakte.
+6. Request Hospital Addition nahi chal raha hai
+7. Claim data, 
+8. Calcuation sahi na raha claims dashboard ka, 
+9. Outstanding claims not done.
+10. Admin user, claim status 6 aur 1, registered, approved.
+11. 

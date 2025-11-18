@@ -1,0 +1,279 @@
+.filter-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1rem 1.25rem;
+    align-items: start;
+}
+
+.filter-grid__item {
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+}
+
+.filter-grid__item--wide {
+    grid-column: 1 / -1;
+}
+
+.filter-grid__label {
+    font-size: 0.7rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--text-secondary, #5a6470);
+    margin-bottom: 0;
+}
+
+.filter-grid__actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    margin-top: 1.1rem;
+}
+
+.filter-grid__actions .btn {
+    min-width: 110px;
+}
+
+.filter-grid__actions > .d-flex {
+    gap: 0.5rem;
+}
+
+.filter-grid__actions > .d-flex:last-child {
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+@media (max-width: 575.98px) {
+    .filter-grid__actions {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0.75rem;
+    }
+
+    .filter-grid__actions > .d-flex:last-child {
+        justify-content: space-between;
+    }
+}
+
+.claims-filter {
+    display: grid;
+    gap: 1rem;
+}
+
+@media (min-width: 992px) {
+    .filter-grid--primary {
+        grid-template-columns: repeat(12, minmax(0, 1fr));
+    }
+
+    .filter-grid__item--search {
+        grid-column: 1 / -1;
+    }
+
+    .filter-grid__item--status {
+        grid-column: 1 / span 8;
+    }
+
+    .filter-grid__item--type {
+        grid-column: 1 / span 8;
+    }
+
+    .filter-grid__item--date {
+        min-width: 160px;
+    }
+
+    .filter-grid__item--date-from {
+        grid-column: 9 / span 2;
+    }
+
+    .filter-grid__item--date-to {
+        grid-column: 11 / span 2;
+    }
+
+    .filter-grid__item--type {
+        grid-column: 1 / span 12;
+    }
+}
+
+.filter-grid--advanced {
+    margin-top: 0.75rem;
+    padding-top: 0.5rem;
+    border-top: 1px solid color-mix(in srgb, var(--card-border, #e6e9ef) 80%, transparent);
+}
+
+.claims-filter__advanced {
+    margin-top: -0.5rem;
+}
+
+.filter-grid__item select[multiple] {
+    min-height: 6.75rem;
+}
+
+.filter-grid__item input[type="date"],
+.filter-grid__item input[type="text"],
+.filter-grid__item select {
+    box-shadow: none;
+}
+
+.filter-grid__actions .btn-link {
+    font-weight: 600;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.25rem;
+}
+
+.filter-grid__actions .btn-link:hover,
+.filter-grid__actions .btn-link:focus {
+    text-decoration: underline;
+}
+.filter-grid__item--search .form-control {
+    padding-inline: 0.85rem 0.85rem;
+    border-radius: 999px;
+}
+
+.filter-search {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.filter-search__icon {
+    position: absolute;
+    left: 0.85rem;
+    width: 1rem;
+    height: 1rem;
+    fill: var(--text-secondary, #5a6470);
+    pointer-events: none;
+}
+
+.filter-search__input {
+    padding-left: 2.4rem !important;
+    width: 100%;
+}
+
+.filter-search__clear {
+    position: absolute;
+    right: 0.75rem;
+    border: 0;
+    background: none;
+    color: var(--text-secondary, #5a6470);
+    font-size: 1rem;
+    line-height: 1;
+    padding: 0;
+    cursor: pointer;
+}
+
+.filter-search__clear:hover,
+.filter-search__clear:focus {
+    color: var(--text-primary, #2c2c2c);
+}
+
+.filter-pills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.filter-pill {
+    position: relative;
+}
+
+.filter-pill__checkbox {
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.filter-pill__label {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    padding: 0.35rem 0.85rem;
+    border: 1px solid color-mix(in srgb, var(--card-border, #e6e9ef) 70%, transparent);
+    border-radius: 999px;
+    font-size: 0.8125rem;
+    color: var(--text-secondary, #5a6470);
+    cursor: pointer;
+    transition: background-color var(--transition-base), color var(--transition-base), border-color var(--transition-base), box-shadow var(--transition-base);
+}
+
+.filter-pill__checkbox:checked + .filter-pill__label {
+    background: color-mix(in srgb, var(--primary, #2a7fa5) 18%, transparent);
+    border-color: color-mix(in srgb, var(--primary, #2a7fa5) 50%, transparent);
+    color: var(--primary, #2a7fa5);
+    box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--primary, #2a7fa5) 60%, transparent);
+}
+
+.filter-pill__label:hover,
+.filter-pill__label:focus-visible {
+    border-color: color-mix(in srgb, var(--primary, #2a7fa5) 45%, transparent);
+    color: var(--primary, #2a7fa5);
+}
+.filter-sheet {
+    position: fixed;
+    inset: 0;
+    background: rgba(12, 25, 45, 0.5);
+    display: none;
+    align-items: flex-end;
+    justify-content: center;
+    z-index: 1100;
+    padding: 1.5rem;
+}
+
+.filter-sheet.is-open {
+    display: flex;
+}
+
+.filter-sheet__dialog {
+    background: var(--panel-surface, #ffffff);
+    border-radius: clamp(18px, 3vw, 24px);
+    border: 1px solid color-mix(in srgb, var(--card-border, #e6e9ef) 80%, transparent);
+    width: min(680px, 100%);
+    max-height: 85vh;
+    display: grid;
+    grid-template-rows: auto 1fr;
+    overflow: hidden;
+    box-shadow: 0 24px 60px rgba(15, 31, 52, 0.25);
+}
+
+.filter-sheet__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 1.5rem;
+    border-bottom: 1px solid color-mix(in srgb, var(--card-border, #e6e9ef) 70%, transparent);
+}
+
+.filter-sheet__header h2 {
+    margin: 0;
+    font-size: 1.1rem;
+}
+
+.filter-sheet__dialog form {
+    padding: 1.5rem;
+    overflow-y: auto;
+}
+
+.filter-sheet__dialog .filter-grid__actions {
+    position: sticky;
+    bottom: 0;
+    background: linear-gradient(180deg, rgba(255,255,255,0) 0%, var(--panel-surface, #ffffff) 35%);
+    padding-top: 1rem;
+}
+
+.filters-open {
+    overflow: hidden;
+}
+@media (max-width: 991.98px) {
+    .claims-filter--inline {
+        display: none !important;
+    }
+}
+
+@media (min-width: 992px) {
+    .claims-filter--inline {
+        display: grid !important;
+    }
+}

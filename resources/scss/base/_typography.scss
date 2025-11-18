@@ -1,0 +1,59 @@
+body {
+    font-family: var(--font-body, "Open Sans", Arial, sans-serif);
+    font-size: 16px;
+    line-height: 1.5;
+    color: var(--text-primary, #2c2c2c);
+    background-color: var(--background, #f4f6fb);
+    background-image: linear-gradient(
+        180deg,
+        var(--body-gradient-start, var(--background, #f4f6fb)) 0%,
+        var(--body-gradient-end, #ffffff) 100%
+    );
+    background-attachment: fixed;
+    min-height: 100vh;
+    transition: color var(--transition-base), background-color var(--transition-base), background-image var(--transition-base);
+}
+
+body.theme-dark {
+    color-scheme: dark;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: var(--font-heading, "Poppins", Arial, sans-serif);
+    font-weight: 600;
+    line-height: 1.2;
+    color: var(--text-primary, #2c2c2c);
+}
+
+.numeric-text {
+    font-family: var(--font-numeric, "Roboto Mono", "Courier New", monospace);
+}
+
+a {
+    color: var(--link-color, #0078d7);
+    text-decoration: none;
+    transition: color var(--transition-base);
+}
+
+a:hover,
+a:focus {
+    color: color-mix(in srgb, var(--link-color, #0078d7) 90%, #000000 10%);
+}
+
+strong {
+    font-weight: 600;
+}
+
+small {
+    font-size: 0.875rem;
+    color: var(--text-secondary, #5a6470);
+}
+
+::selection {
+    background: color-mix(in srgb, var(--primary, #2a7fa5) 30%, #ffffff 70%);
+}
